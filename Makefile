@@ -1,6 +1,10 @@
 VERSION = 4
 PATCHLEVEL = 4
+<<<<<<< HEAD
 SUBLEVEL = 268
+=======
+SUBLEVEL = 267
+>>>>>>> fdb1d214d8fa... Merge kernel 4.4.267
 EXTRAVERSION =
 NAME = Blurry Fish Butt
 
