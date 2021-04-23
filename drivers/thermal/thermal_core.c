@@ -823,15 +823,21 @@ static void thermal_zone_device_set_polling(struct workqueue_struct *queue,
 {
 	if (delay > 1000)
 
+
 		mod_delayed_work(queue, &tz->poll_queue,
 				 round_jiffies(msecs_to_jiffies(delay)));
 	else if (delay)
 		mod_delayed_work(queue, &tz->poll_queue,
 
+
+
 		mod_delayed_work(system_freezable_wq, &tz->poll_queue,
 				 round_jiffies(msecs_to_jiffies(delay)));
 	else if (delay)
 		mod_delayed_work(system_freezable_wq, &tz->poll_queue,
+
+
+
 
 				 msecs_to_jiffies(delay));
 	else
