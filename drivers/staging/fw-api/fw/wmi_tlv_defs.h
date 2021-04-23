@@ -1012,6 +1012,137 @@ typedef enum {
     WMITLV_TAG_STRUC_wmi_cfr_filter_group_config,
     WMITLV_TAG_STRUC_wmi_fd_tmpl_cmd_fixed_param,
     WMITLV_TAG_STRUC_wmi_vdev_bss_max_idle_time_cmd_fixed_param,
+<<<<<<< HEAD
+=======
+    WMITLV_TAG_STRUC_wmi_atf_ssid_grp_request_fixed_param,
+    WMITLV_TAG_STRUC_wmi_atf_group_info,
+    WMITLV_TAG_STRUC_wmi_atf_grp_wmm_ac_cfg_request_fixed_param,
+    WMITLV_TAG_STRUC_wmi_atf_group_wmm_ac_info,
+    WMITLV_TAG_STRUC_wmi_peer_atf_ext_request_fixed_param,
+    WMITLV_TAG_STRUC_wmi_peer_atf_ext_info,
+    WMITLV_TAG_STRUC_wmi_get_channel_ani_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_channel_ani_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_get_channel_ani_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_oem_data_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_peer_config_vlan_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_roam_stats_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_roam_trigger_reason_tlv_param,
+    WMITLV_TAG_STRUC_wmi_roam_scan_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_roam_scan_channel_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_roam_ap_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_roam_result_tlv_param,
+    WMITLV_TAG_STRUC_wmi_roam_neighbor_report_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_roam_neighbor_report_channel_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_set_ocl_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_set_group_auto_rate,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_set_group_probe,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_update_sta_group_info,
+    WMITLV_TAG_STRUC_wmi_audio_sync_trigger_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_sync_qtimer_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_sync_start_stop_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_sync_q_master_slave_offset_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_sync_q_master_slave_times,
+    WMITLV_TAG_STRUC_wmi_roam_frame_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_vdev_set_pcl_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_peer_create_conf_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_multiple_vdev_restart_resp_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_roam_get_scan_channel_list_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_roam_scan_channel_list_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_get_big_data_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_send_big_data_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_nan_dmesg_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_frame_inject_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_smartant_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_tbtt_offset_sync_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_rnr_bss_tbtt_info,
+    WMITLV_TAG_STRUC_WMI_MAC_PHY_CAPABILITIES_EXT,
+    WMITLV_TAG_STRUC_WMI_HAL_REG_CAPABILITIES_EXT2,
+    WMITLV_TAG_STRUC_wmi_roam_pmk_cache_synch_tlv_param,
+    WMITLV_TAG_STRUC_wmi_mdns_set_staIP_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_get_big_data_p2_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_send_big_data_p2_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_get_statistics,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_reset_statistics,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_statistics_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_group_stats,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_peer_stats,
+    WMITLV_TAG_STRUC_wmi_ant_controller_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_srg_bss_color_bitmap_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_srg_partial_bssid_bitmap_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_simulation_test_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_set_rtscts_config,
+    WMITLV_TAG_STRUC_wmi_pdev_sscan_fw_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_sscan_fft_bin_index,
+    WMITLV_TAG_STRUC_wmi_pdev_srg_obss_color_enable_bitmap_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_srg_obss_bssid_enable_bitmap_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_non_srg_obss_color_enable_bitmap_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_non_srg_obss_bssid_enable_bitmap_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_roam_capability_report_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pmf_bcn_protect_stats,
+    WMITLV_TAG_STRUC_wmi_nan_capabilities,
+    WMITLV_TAG_STRUC_wmi_request_ctrl_path_stats_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_ctrl_path_stats_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_ctrl_path_pdev_stats_struct,
+    WMITLV_TAG_STRUC_wmi_pdev_get_tpc_stats_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_get_tpc_stats_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_tpc_configs,
+    WMITLV_TAG_STRUC_wmi_max_reg_power_allowed,
+    WMITLV_TAG_STRUC_wmi_tpc_rates_array,
+    WMITLV_TAG_STRUC_wmi_tpc_ctl_pwr_table,
+    WMITLV_TAG_STRUC_wmi_vdev_bcn_latency_fixed_param,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_set_sched_method,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_get_sched_method,
+    WMITLV_TAG_STRUC_wmi_audio_aggr_sched_method_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_disconnect_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_roam_btm_response_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_roam_initial_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_pdev_twt_session_stats_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_twt_session_stats_info,
+    WMITLV_TAG_STRUC_wmi_configure_roam_trigger_parameters,
+    WMITLV_TAG_STRUC_wmi_vdev_extd_stats,
+    WMITLV_TAG_STRUC_wmi_twt_add_dialog_additional_params,
+    WMITLV_TAG_STRUC_WMI_SCAN_RADIO_CAPABILITIES_EXT2,
+    WMITLV_TAG_STRUC_wmi_wfa_config_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_wfa_config_rsnxe,
+    WMITLV_TAG_STRUC_wmi_wfa_config_csa,
+    WMITLV_TAG_STRUC_wmi_wfa_config_ocv,
+    WMITLV_TAG_STRUC_wmi_wfa_config_saquery,
+    WMITLV_TAG_STRUC_wmi_roam_data_rssi_roaming_param,
+    WMITLV_TAG_STRUC_wmi_request_unified_ll_get_sta_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_sscan_evt_message_fixed_param,
+    WMITLV_TAG_STRUC_wmi_qos_null_frame_tx_send_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_qos_null_frame_tx_compl_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_enable_duration_based_tx_mode_selection_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_regulatory_rule_ext_struct,
+    WMITLV_TAG_STRUC_wmi_reg_chan_list_cc_event_ext_fixed_param,
+    WMITLV_TAG_STRUC_wmi_ctrl_path_mem_stats_struct,
+    WMITLV_TAG_STRUC_wmi_twt_nudge_dialog_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_twt_nudge_dialog_complete_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_vendor_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_vendor_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_vendor_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_vendor_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_peer_vendor_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_peer_vendor_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_roam_msg_info_tlv_param,
+    WMITLV_TAG_STRUC_wmi_vdev_set_tpc_power_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_ch_power_info,
+    WMITLV_TAG_STRUC_wmi_vdev_tid_latency_config_fixed_param,
+    WMITLV_TAG_STRUC_wmi_vdev_latency_info,
+    WMITLV_TAG_STRUC_wmi_peer_tid_latency_config_fixed_param,
+    WMITLV_TAG_STRUC_wmi_tid_latency_info,
+    WMITLV_TAG_STRUC_wmi_ctrl_path_twt_stats_struct,
+    WMITLV_TAG_STRUC_wmi_ctrl_path_calibration_stats_struct,
+    WMITLV_TAG_STRUC_wmi_twt_notify_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_mlo_link_set_active_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_mlo_link_set_active_resp_event_fixed_param,
+    WMITLV_TAG_STRUC_wmi_roam_sae_offload_tlv_param,
+    WMITLV_TAG_STRUC_wmi_big_data_dp_stats_tlv_param,
+    WMITLV_TAG_STRUC_wmi_pdev_get_dpd_status_cmd_fixed_param,
+    WMITLV_TAG_STRUC_wmi_pdev_get_dpd_status_evt_fixed_param,
+    WMITLV_TAG_STRUC_wmi_eht_rate_set,
+    WMITLV_TAG_STRUC_wmi_dcs_awgn_int_t,
+>>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
 } WMITLV_TAG_ID;
 
 /*
@@ -2131,7 +2262,13 @@ WMITLV_CREATE_PARAM_STRUC(WMI_VDEV_IPSEC_NATKEEPALIVE_FILTER_CMDID);
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_BYTE, A_UINT8, peer_legacy_rates, WMITLV_SIZE_VAR) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_BYTE, A_UINT8, peer_ht_rates, WMITLV_SIZE_VAR) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_STRUC_wmi_vht_rate_set, wmi_vht_rate_set, peer_vht_rates, WMITLV_SIZE_FIX) \
+<<<<<<< HEAD
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_he_rate_set, peer_he_rates, WMITLV_SIZE_VAR)
+=======
+    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_he_rate_set, peer_he_rates, WMITLV_SIZE_VAR) \
+    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_peer_assoc_mlo_params, mlo_params, WMITLV_SIZE_VAR) \
+    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_eht_rate_set, peer_eht_rates, WMITLV_SIZE_VAR)
+>>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
 
 WMITLV_CREATE_PARAM_STRUC(WMI_PEER_ASSOC_CMDID);
 
@@ -2340,7 +2477,8 @@ WMITLV_CREATE_PARAM_STRUC(WMI_REQUEST_WLM_STATS_CMDID);
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_STRUC_enlo_candidate_score_param, enlo_candidate_score_params, candidate_score_params, WMITLV_SIZE_FIX)\
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_vendor_oui, vendor_oui, WMITLV_SIZE_VAR) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_STRUC_wmi_connected_nlo_rssi_params, connected_nlo_rssi_params, cnlo_rssi_params, WMITLV_SIZE_FIX) \
-    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, connected_nlo_bss_band_rssi_pref, cnlo_bss_band_rssi_pref, WMITLV_SIZE_VAR)
+    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, connected_nlo_bss_band_rssi_pref, cnlo_bss_band_rssi_pref, WMITLV_SIZE_VAR) \
+    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_UINT32, A_UINT32, preferred_chan_list, WMITLV_SIZE_VAR)
 WMITLV_CREATE_PARAM_STRUC(WMI_NETWORK_LIST_OFFLOAD_CONFIG_CMDID);
 
 /* Passpoint list offload config Cmd */
@@ -4540,7 +4678,8 @@ WMITLV_CREATE_PARAM_STRUC(WMI_GTK_OFFLOAD_STATUS_EVENTID);
 #define WMITLV_TABLE_WMI_DCS_INTERFERENCE_EVENTID(id,op,buf,len) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_STRUC_wmi_dcs_interference_event_fixed_param, wmi_dcs_interference_event_fixed_param, fixed_param, WMITLV_SIZE_FIX) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wlan_dcs_cw_int, cw_int, WMITLV_SIZE_VAR) \
-    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wlan_dcs_im_tgt_stats_t, wlan_stat, WMITLV_SIZE_VAR)
+    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wlan_dcs_im_tgt_stats_t, wlan_stat, WMITLV_SIZE_VAR) \
+    WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_dcs_awgn_int_t, awgn_int, WMITLV_SIZE_VAR)
 WMITLV_CREATE_PARAM_STRUC(WMI_DCS_INTERFERENCE_EVENTID);
 
 /* Profile data Event */

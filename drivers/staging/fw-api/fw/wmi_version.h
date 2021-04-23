@@ -36,7 +36,11 @@
 #define __WMI_VER_MINOR_    0
 /** WMI revision number has to be incremented when there is a
  *  change that may or may not break compatibility. */
+<<<<<<< HEAD
 #define __WMI_REVISION_ 725
+=======
+#define __WMI_REVISION_ 973
+>>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
 
 /** The Version Namespace should not be normally changed. Only
  *  host and firmware of the same WMI namespace will work

@@ -894,6 +894,15 @@ static netdev_tx_t __hdd_hard_start_xmit(struct sk_buff *skb,
 	++pAdapter->hdd_stats.hddTxRxStats.txXmitCalled;
 	pAdapter->hdd_stats.hddTxRxStats.cont_txtimeout_cnt = 0;
 
+<<<<<<< HEAD
+=======
+	if (hdd_ctx->hdd_wlan_suspended) {
+		hdd_err_rl("Device is system suspended, drop pkt");
+		goto drop_pkt;
+	}
+
+	wlan_hdd_classify_pkt(skb);
+>>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
 	if (QDF_NBUF_CB_GET_PACKET_TYPE(skb) == QDF_NBUF_CB_PACKET_TYPE_ARP) {
 		is_arp = true;
 		if (qdf_nbuf_data_is_arp_req(skb) &&

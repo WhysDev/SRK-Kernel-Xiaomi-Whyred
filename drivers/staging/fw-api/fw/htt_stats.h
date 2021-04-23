@@ -441,6 +441,35 @@ typedef enum {
     HTT_STATS_RX_PDEV_UL_MUMIMO_TRIG_STATS_TAG     = 97, /* htt_rx_pdev_ul_mumimo_trig_stats_tlv */
     HTT_STATS_RX_FSE_STATS_TAG                     = 98, /* htt_rx_fse_stats_tlv */
     HTT_STATS_PEER_SCHED_STATS_TAG                 = 99, /* htt_peer_sched_stats_tlv */
+<<<<<<< HEAD
+=======
+    HTT_STATS_SCHED_TXQ_SUPERCYCLE_TRIGGER_TAG     = 100, /* htt_sched_txq_supercycle_triggers_tlv_v */
+    HTT_STATS_PEER_CTRL_PATH_TXRX_STATS_TAG        = 101, /* htt_peer_ctrl_path_txrx_stats_tlv */
+    HTT_STATS_PDEV_CTRL_PATH_TX_STATS_TAG          = 102, /* htt_pdev_ctrl_path_tx_stats_tlv */
+    HTT_STATS_RX_PDEV_RATE_EXT_STATS_TAG           = 103, /* htt_rx_pdev_rate_ext_stats_tlv */
+    HTT_STATS_TX_PDEV_DL_MU_MIMO_STATS_TAG         = 104, /* htt_tx_pdev_dl_mu_mimo_sch_stats_tlv */
+    HTT_STATS_TX_PDEV_UL_MU_MIMO_STATS_TAG         = 105, /* htt_tx_pdev_ul_mu_mimo_sch_stats_tlv */
+    HTT_STATS_TX_PDEV_DL_MU_OFDMA_STATS_TAG        = 106, /* htt_tx_pdev_dl_mu_ofdma_sch_stats_tlv */
+    HTT_STATS_TX_PDEV_UL_MU_OFDMA_STATS_TAG        = 107, /* htt_tx_pdev_ul_mu_ofdma_sch_stats_tlv */
+    HTT_STATS_PDEV_TX_RATE_TXBF_STATS_TAG          = 108, /* htt_tx_peer_rate_txbf_stats_tlv */
+    HTT_STATS_UNSUPPORTED_ERROR_STATS_TAG          = 109, /* htt_stats_error_tlv_v */
+    HTT_STATS_UNAVAILABLE_ERROR_STATS_TAG          = 110, /* htt_stats_error_tlv_v */
+    HTT_STATS_TX_SELFGEN_AC_SCHED_STATUS_STATS_TAG = 111, /* htt_tx_selfgen_ac_sched_status_stats_tlv */
+    HTT_STATS_TX_SELFGEN_AX_SCHED_STATUS_STATS_TAG = 112, /* htt_tx_selfgen_ax_sched_status_stats_tlv */
+    HTT_STATS_TXBF_OFDMA_NDPA_STATS_TAG            = 113, /* htt_txbf_ofdma_ndpa_stats_tlv */
+    HTT_STATS_TXBF_OFDMA_NDP_STATS_TAG             = 114, /* htt_txbf_ofdma_ndp_stats_tlv */
+    HTT_STATS_TXBF_OFDMA_BRP_STATS_TAG             = 115, /* htt_txbf_ofdma_brp_stats_tlv */
+    HTT_STATS_TXBF_OFDMA_STEER_STATS_TAG           = 116, /* htt_txbf_ofdma_steer_stats_tlv */
+    HTT_STATS_STA_UL_OFDMA_STATS_TAG               = 117, /* htt_sta_ul_ofdma_stats_tlv */
+    HTT_STATS_VDEV_RTT_RESP_STATS_TAG              = 118, /* htt_vdev_rtt_resp_stats_tlv */
+    HTT_STATS_PKTLOG_AND_HTT_RING_STATS_TAG        = 119, /* htt_pktlog_and_htt_ring_stats_tlv */
+    HTT_STATS_DLPAGER_STATS_TAG                    = 120, /* htt_dlpager_stats_tlv */
+    HTT_STATS_PHY_COUNTERS_TAG                     = 121, /* htt_phy_counters_tlv */
+    HTT_STATS_PHY_STATS_TAG                        = 122, /* htt_phy_stats_tlv */
+    HTT_STATS_PHY_RESET_COUNTERS_TAG               = 123, /* htt_phy_reset_counters_tlv */
+    HTT_STATS_PHY_RESET_STATS_TAG                  = 124, /* htt_phy_reset_stats_tlv */
+
+>>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
 
     HTT_STATS_MAX_TAG,
 } htt_tlv_tag_t;
@@ -4316,5 +4345,566 @@ typedef struct {
     htt_rx_fse_stats_tlv rx_fse_stats;
 } htt_rx_fse_stats_t;
 
+<<<<<<< HEAD
+=======
+#define HTT_TX_TXBF_RATE_STATS_NUM_MCS_COUNTERS 14
+#define HTT_TX_TXBF_RATE_STATS_NUM_BW_COUNTERS 5 /* 20, 40, 80, 160, 320 */
+
+typedef struct {
+    htt_tlv_hdr_t tlv_hdr;
+    /* SU TxBF TX MCS stats */
+    A_UINT32 tx_su_txbf_mcs[HTT_TX_TXBF_RATE_STATS_NUM_MCS_COUNTERS];
+    /* Implicit BF TX MCS stats */
+    A_UINT32 tx_su_ibf_mcs[HTT_TX_TXBF_RATE_STATS_NUM_MCS_COUNTERS];
+    /* Open loop TX MCS stats */
+    A_UINT32 tx_su_ol_mcs[HTT_TX_TXBF_RATE_STATS_NUM_MCS_COUNTERS];
+    /* SU TxBF TX NSS stats */
+    A_UINT32 tx_su_txbf_nss[HTT_TX_PDEV_STATS_NUM_SPATIAL_STREAMS];
+    /* Implicit BF TX NSS stats */
+    A_UINT32 tx_su_ibf_nss[HTT_TX_PDEV_STATS_NUM_SPATIAL_STREAMS];
+    /* Open loop TX NSS stats */
+    A_UINT32 tx_su_ol_nss[HTT_TX_PDEV_STATS_NUM_SPATIAL_STREAMS];
+    /* SU TxBF TX BW stats */
+    A_UINT32 tx_su_txbf_bw[HTT_TX_TXBF_RATE_STATS_NUM_BW_COUNTERS];
+    /* Implicit BF TX BW stats */
+    A_UINT32 tx_su_ibf_bw[HTT_TX_TXBF_RATE_STATS_NUM_BW_COUNTERS];
+    /* Open loop TX BW stats */
+    A_UINT32 tx_su_ol_bw[HTT_TX_TXBF_RATE_STATS_NUM_BW_COUNTERS];
+    /* Legacy and OFDM TX rate stats */
+    A_UINT32 tx_legacy_ofdm_rate[HTT_TX_PDEV_STATS_NUM_LEGACY_OFDM_STATS];
+} htt_tx_pdev_txbf_rate_stats_tlv;
+
+/* NOTE:
+ * This structure is for documentation, and cannot be safely used directly.
+ * Instead, use the constituent TLV structures to fill/parse.
+ */
+typedef struct {
+    htt_tx_pdev_txbf_rate_stats_tlv txbf_rate_stats;
+} htt_pdev_txbf_rate_stats_t;
+
+typedef enum {
+  HTT_ULTRIG_QBOOST_TRIGGER = 0,
+  HTT_ULTRIG_PSPOLL_TRIGGER,
+  HTT_ULTRIG_UAPSD_TRIGGER,
+  HTT_ULTRIG_11AX_TRIGGER,
+  HTT_ULTRIG_11AX_WILDCARD_TRIGGER,
+  HTT_ULTRIG_11AX_UNASSOC_WILDCARD_TRIGGER,
+  HTT_STA_UL_OFDMA_NUM_TRIG_TYPE,
+} HTT_STA_UL_OFDMA_RX_TRIG_TYPE;
+
+typedef enum {
+  HTT_11AX_TRIGGER_BASIC_E                             = 0,
+  HTT_11AX_TRIGGER_BRPOLL_E                            = 1,
+  HTT_11AX_TRIGGER_MU_BAR_E                            = 2,
+  HTT_11AX_TRIGGER_MU_RTS_E                            = 3,
+  HTT_11AX_TRIGGER_BUFFER_SIZE_E                       = 4,
+  HTT_11AX_TRIGGER_GCR_MU_BAR_E                        = 5,
+  HTT_11AX_TRIGGER_BQRP_E                              = 6,
+  HTT_11AX_TRIGGER_NDP_FB_REPORT_POLL_E                = 7,
+  HTT_11AX_TRIGGER_RESERVED_8_E                        = 8,
+  HTT_11AX_TRIGGER_RESERVED_9_E                        = 9,
+  HTT_11AX_TRIGGER_RESERVED_10_E                       = 10,
+  HTT_11AX_TRIGGER_RESERVED_11_E                       = 11,
+  HTT_11AX_TRIGGER_RESERVED_12_E                       = 12,
+  HTT_11AX_TRIGGER_RESERVED_13_E                       = 13,
+  HTT_11AX_TRIGGER_RESERVED_14_E                       = 14,
+  HTT_11AX_TRIGGER_RESERVED_15_E                       = 15,
+  HTT_STA_UL_OFDMA_NUM_11AX_TRIG_TYPE,
+} HTT_STA_UL_OFDMA_11AX_TRIG_TYPE;
+
+/* UL RESP Queues 0 - HIPRI, 1 - LOPRI & 2 - BSR */
+#define HTT_STA_UL_OFDMA_NUM_UL_QUEUES 3
+/* Actual resp type sent by STA for trigger
+ * 0 - HE TB PPDU, 1 - NULL Delimiter */
+#define HTT_STA_UL_OFDMA_NUM_RESP_END_TYPE 2
+/* Counter for MCS 0-13 */
+#define HTT_STA_UL_OFDMA_NUM_MCS_COUNTERS 14
+/* Counters BW 20,40,80,160,320 */
+#define HTT_STA_UL_OFDMA_NUM_BW_COUNTERS 5
+
+/* STATS_TYPE : HTT_DBG_EXT_STA_11AX_UL_STATS
+ * TLV_TAGS:
+ *    - HTT_STATS_STA_UL_OFDMA_STATS_TAG
+ */
+typedef struct {
+    htt_tlv_hdr_t tlv_hdr;
+
+    A_UINT32 pdev_id;
+
+    /* Trigger Type reported by HWSCH on RX reception
+     * Each index populate enum HTT_STA_UL_OFDMA_RX_TRIG_TYPE */
+    A_UINT32 rx_trigger_type[HTT_STA_UL_OFDMA_NUM_TRIG_TYPE];
+    /* 11AX Trigger Type on RX reception
+     * Each index populate enum HTT_STA_UL_OFDMA_11AX_TRIG_TYPE */
+    A_UINT32 ax_trigger_type[HTT_STA_UL_OFDMA_NUM_11AX_TRIG_TYPE];
+
+    /* Num data PPDUs/Delims responded to trigs. per HWQ for UL RESP */
+    A_UINT32 num_data_ppdu_responded_per_hwq[HTT_STA_UL_OFDMA_NUM_UL_QUEUES];
+    A_UINT32 num_null_delimiters_responded_per_hwq[HTT_STA_UL_OFDMA_NUM_UL_QUEUES];
+    /* Overall UL STA RESP Status 0 - HE TB PPDU, 1 - NULL Delimiter
+     * Super set of num_data_ppdu_responded_per_hwq, num_null_delimiters_responded_per_hwq */
+    A_UINT32 num_total_trig_responses[HTT_STA_UL_OFDMA_NUM_RESP_END_TYPE];
+
+    /* Time interval between current time ms and last successful trigger RX
+     * 0xFFFFFFFF denotes no trig received / timestamp roll back */
+    A_UINT32 last_trig_rx_time_delta_ms;
+
+    /* Rate Statistics for UL OFDMA
+     * UL TB PPDU TX MCS, NSS, GI, BW from STA HWQ */
+    A_UINT32 ul_ofdma_tx_mcs[HTT_STA_UL_OFDMA_NUM_MCS_COUNTERS];
+    A_UINT32 ul_ofdma_tx_nss[HTT_TX_PDEV_STATS_NUM_SPATIAL_STREAMS];
+    A_UINT32 ul_ofdma_tx_gi[HTT_TX_PDEV_STATS_NUM_GI_COUNTERS][HTT_STA_UL_OFDMA_NUM_MCS_COUNTERS];
+    A_UINT32 ul_ofdma_tx_ldpc;
+    A_UINT32 ul_ofdma_tx_bw[HTT_STA_UL_OFDMA_NUM_BW_COUNTERS];
+
+    /* Trig based PPDU TX/ RBO based PPDU TX Count */
+    A_UINT32 trig_based_ppdu_tx;
+    A_UINT32 rbo_based_ppdu_tx;
+    /* Switch MU EDCA to SU EDCA Count */
+    A_UINT32 mu_edca_to_su_edca_switch_count;
+    /* Num MU EDCA applied Count */
+    A_UINT32 num_mu_edca_param_apply_count;
+
+    /* Current MU EDCA Parameters for WMM ACs
+     * Mode - 0 - SU EDCA, 1- MU EDCA */
+    A_UINT32 current_edca_hwq_mode[HTT_NUM_AC_WMM];
+    /* Contention Window minimum. Range: 1 - 10 */
+    A_UINT32 current_cw_min[HTT_NUM_AC_WMM];
+    /* Contention Window maximum. Range: 1 - 10 */
+    A_UINT32 current_cw_max[HTT_NUM_AC_WMM];
+    /* AIFS value - 0 -255 */
+    A_UINT32 current_aifs[HTT_NUM_AC_WMM];
+
+} htt_sta_ul_ofdma_stats_tlv;
+
+/* NOTE:
+ * This structure is for documentation, and cannot be safely used directly.
+ * Instead, use the constituent TLV structures to fill/parse.
+ */
+typedef struct {
+    htt_sta_ul_ofdma_stats_tlv ul_ofdma_sta_stats;
+} htt_sta_11ax_ul_stats_t;
+
+typedef struct {
+    htt_tlv_hdr_t tlv_hdr;
+    /* No of Fine Timing Measurement frames transmitted successfully */
+    A_UINT32 tx_ftm_suc;
+    /* No of Fine Timing Measurement frames transmitted successfully after retry */
+    A_UINT32 tx_ftm_suc_retry;
+    /* No of Fine Timing Measurement frames not transmitted successfully */
+    A_UINT32 tx_ftm_fail;
+    /* No of Fine Timing Measurement Request frames received, including initial, non-initial, and duplicates */
+    A_UINT32 rx_ftmr_cnt;
+    /* No of duplicate Fine Timing Measurement Request frames received, including both initial and non-initial */
+    A_UINT32 rx_ftmr_dup_cnt;
+    /* No of initial Fine Timing Measurement Request frames received */
+    A_UINT32 rx_iftmr_cnt;
+    /* No of duplicate initial Fine Timing Measurement Request frames received */
+    A_UINT32 rx_iftmr_dup_cnt;
+} htt_vdev_rtt_resp_stats_tlv;
+
+typedef struct {
+    htt_vdev_rtt_resp_stats_tlv vdev_rtt_resp_stats;
+} htt_vdev_rtt_resp_stats_t;
+
+/* STATS_TYPE : HTT_DBG_EXT_PKTLOG_AND_HTT_RING_STATS
+ * TLV_TAGS:
+ *    - HTT_STATS_PKTLOG_AND_HTT_RING_STATS_TAG
+ */
+/* NOTE:
+ * This structure is for documentation, and cannot be safely used directly.
+ * Instead, use the constituent TLV structures to fill/parse.
+ */
+typedef struct {
+    htt_tlv_hdr_t   tlv_hdr;
+
+    /* No of pktlog payloads that were dropped in htt_ppdu_stats path */
+    A_UINT32 pktlog_lite_drop_cnt;
+    /* No of pktlog payloads that were dropped in TQM path */
+    A_UINT32 pktlog_tqm_drop_cnt;
+    /* No of pktlog ppdu stats payloads that were dropped */
+    A_UINT32 pktlog_ppdu_stats_drop_cnt;
+    /* No of pktlog ppdu ctrl payloads that were dropped */
+    A_UINT32 pktlog_ppdu_ctrl_drop_cnt;
+    /* No of pktlog sw events payloads that were dropped */
+    A_UINT32 pktlog_sw_events_drop_cnt;
+} htt_pktlog_and_htt_ring_stats_tlv;
+
+#define HTT_DLPAGER_STATS_MAX_HIST            10
+#define HTT_DLPAGER_ASYNC_LOCKED_PAGE_COUNT_M 0x000000FF
+#define HTT_DLPAGER_ASYNC_LOCKED_PAGE_COUNT_S 0
+#define HTT_DLPAGER_SYNC_LOCKED_PAGE_COUNT_M  0x0000FF00
+#define HTT_DLPAGER_SYNC_LOCKED_PAGE_COUNT_S  8
+#define HTT_DLPAGER_TOTAL_LOCKED_PAGES_M      0x0000FFFF
+#define HTT_DLPAGER_TOTAL_LOCKED_PAGES_S      0
+#define HTT_DLPAGER_TOTAL_FREE_PAGES_M        0xFFFF0000
+#define HTT_DLPAGER_TOTAL_FREE_PAGES_S        16
+#define HTT_DLPAGER_LAST_LOCKED_PAGE_IDX_M    0x0000FFFF
+#define HTT_DLPAGER_LAST_LOCKED_PAGE_IDX_S    0
+#define HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX_M  0xFFFF0000
+#define HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX_S  16
+
+#define HTT_DLPAGER_ASYNC_LOCK_PAGE_COUNT_GET(_var) \
+    (((_var) & HTT_DLPAGER_ASYNC_LOCKED_PAGE_COUNT_M) >> \
+     HTT_DLPAGER_ASYNC_LOCKED_PAGE_COUNT_S)
+
+#define HTT_DLPAGER_ASYNC_LOCK_PAGE_COUNT_SET(_var, _val) \
+    do { \
+        HTT_CHECK_SET_VAL(HTT_DLPAGER_ASYNC_LOCKED_PAGE_COUNT, _val); \
+        ((_var) &= ~(HTT_DLPAGER_ASYNC_LOCKED_PAGE_COUNT_M));\
+        ((_var) |= ((_val) << HTT_DLPAGER_ASYNC_LOCKED_PAGE_COUNT_S)); \
+    } while (0)
+
+#define HTT_DLPAGER_SYNC_LOCK_PAGE_COUNT_GET(_var) \
+    (((_var) & HTT_DLPAGER_SYNC_LOCKED_PAGE_COUNT_M) >> \
+     HTT_DLPAGER_SYNC_LOCKED_PAGE_COUNT_S)
+
+#define HTT_DLPAGER_SYNC_LOCK_PAGE_COUNT_SET(_var, _val) \
+    do { \
+        HTT_CHECK_SET_VAL(HTT_DLPAGER_SYNC_LOCKED_PAGE_COUNT, _val); \
+        ((_var) &= ~(HTT_DLPAGER_SYNC_LOCKED_PAGE_COUNT_M));\
+        ((_var) |= ((_val) << HTT_DLPAGER_SYNC_LOCKED_PAGE_COUNT_S)); \
+    } while (0)
+
+#define HTT_DLPAGER_TOTAL_LOCKED_PAGES_GET(_var) \
+    (((_var) & HTT_DLPAGER_TOTAL_LOCKED_PAGES_M) >> \
+     HTT_DLPAGER_TOTAL_LOCKED_PAGES_S)
+
+#define HTT_DLPAGER_TOTAL_LOCKED_PAGES_SET(_var, _val) \
+    do { \
+        HTT_CHECK_SET_VAL(HTT_DLPAGER_TOTAL_LOCKED_PAGES, _val); \
+        ((_var) &= ~(HTT_DLPAGER_TOTAL_LOCKED_PAGES_M)); \
+        ((_var) |= ((_val) << HTT_DLPAGER_TOTAL_LOCKED_PAGES_S)); \
+    } while (0)
+
+#define HTT_DLPAGER_TOTAL_FREE_PAGES_GET(_var) \
+    (((_var) & HTT_DLPAGER_TOTAL_FREE_PAGES_M) >> \
+     HTT_DLPAGER_TOTAL_FREE_PAGES_S)
+
+#define HTT_DLPAGER_TOTAL_FREE_PAGES_SET(_var, _val) \
+    do { \
+        HTT_CHECK_SET_VAL(HTT_DLPAGER_TOTAL_FREE_PAGES, _val); \
+        ((_var) &= ~(HTT_DLPAGER_TOTAL_FREE_PAGES_M)); \
+        ((_var) |= ((_val) << HTT_DLPAGER_TOTAL_FREE_PAGES_S)); \
+    } while (0)
+
+#define HTT_DLPAGER_LAST_LOCKED_PAGE_IDX_GET(_var) \
+    (((_var) & HTT_DLPAGER_LAST_LOCKED_PAGE_IDX_M) >> \
+     HTT_DLPAGER_LAST_LOCKED_PAGE_IDX_S)
+
+#define HTT_DLPAGER_LAST_LOCKED_PAGE_IDX_SET(_var, _val) \
+    do { \
+        HTT_CHECK_SET_VAL(HTT_DLPAGER_LAST_LOCKED_PAGE_IDX, _val); \
+        ((_var) &= ~(HTT_DLPAGER_LAST_LOCKED_PAGE_IDX_M)); \
+        ((_var) |= ((_val) << HTT_DLPAGER_LAST_LOCKED_PAGE_IDX_S)); \
+    } while (0)
+
+#define HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX_GET(_var) \
+    (((_var) & HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX_M) >> \
+     HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX_S)
+
+#define HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX_SET(_var, _val) \
+    do { \
+        HTT_CHECK_SET_VAL(HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX, _val); \
+        ((_var) &= ~(HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX_M)); \
+        ((_var) |= ((_val) << HTT_DLPAGER_LAST_UNLOCKED_PAGE_IDX_S)); \
+    } while (0)
+
+enum {
+    HTT_STATS_PAGE_LOCKED = 0,
+    HTT_STATS_PAGE_UNLOCKED = 1,
+    HTT_STATS_NUM_PAGE_LOCK_STATES
+};
+
+/* dlPagerStats structure
+ * Number of lock/unlock pages with last 10 lock/unlock occurrences are recorded */
+typedef struct{
+    /* msg_dword_1 bitfields:
+     *     async_lock                 : 8,
+     *     sync_lock                  : 8,
+     *     reserved                   : 16;
+     */
+    A_UINT32     msg_dword_1;
+    /* mst_dword_2 bitfields:
+     *     total_locked_pages         : 16,
+     *     total_free_pages           : 16;
+     */
+    A_UINT32     msg_dword_2;
+    /* msg_dword_3 bitfields:
+     *     last_locked_page_idx       : 16,
+     *     last_unlocked_page_idx     : 16;
+     */
+    A_UINT32     msg_dword_3;
+
+    struct {
+        A_UINT32 page_num;
+        A_UINT32 num_of_pages;
+        /* timestamp is in microsecond units, from SoC timer clock */
+        A_UINT32 timestamp_lsbs;
+        A_UINT32 timestamp_msbs;
+    } last_pages_info[HTT_STATS_NUM_PAGE_LOCK_STATES][HTT_DLPAGER_STATS_MAX_HIST];
+} htt_dl_pager_stats_tlv;
+
+/* NOTE:
+ *  This structure is for documentation, and cannot be safely used directly.
+ *  Instead, use the constituent TLV structures to fill/parse.
+ *  STATS_TYPE : HTT_DBG_EXT_STATS_DLPAGER_STATS
+ *  TLV_TAGS:
+ *      - HTT_STATS_DLPAGER_STATS_TAG
+ */
+typedef struct {
+    htt_tlv_hdr_t tlv_hdr;
+    htt_dl_pager_stats_tlv dl_pager_stats;
+} htt_dlpager_stats_t;
+
+/*======= PHY STATS ====================*/
+/*
+ * STATS TYPE : HTT_DBG_EXT_PHY_COUNTERS_AND_PHY_STATS
+ * TLV_TAGS:
+ *    - HTT_STATS_PHY_COUNTERS_TAG
+ *    - HTT_STATS_PHY_STATS_TAG
+ */
+
+#define HTT_MAX_RX_PKT_CNT 8
+#define HTT_MAX_RX_PKT_CRC_PASS_CNT 8
+#define HTT_MAX_PER_BLK_ERR_CNT 20
+#define HTT_MAX_RX_OTA_ERR_CNT 14
+
+typedef enum {
+    HTT_STATS_CHANNEL_HALF_RATE          = 0x0001,   /* Half rate */
+    HTT_STATS_CHANNEL_QUARTER_RATE       = 0x0002,   /* Quarter rate */
+    HTT_STATS_CHANNEL_DFS                = 0x0004,   /* Enable radar event reporting */
+    HTT_STATS_CHANNEL_HOME               = 0x0008,   /* Home channel */
+    HTT_STATS_CHANNEL_PASSIVE_SCAN       = 0x0010,   /*Passive Scan */
+    HTT_STATS_CHANNEL_DFS_SAP_NOT_UP     = 0x0020,   /* set when VDEV_START_REQUEST, clear when VDEV_UP */
+    HTT_STATS_CHANNEL_PASSIVE_SCAN_CAL   = 0x0040,   /* need to do passive scan calibration to avoid "spikes" */
+    HTT_STATS_CHANNEL_DFS_SAP_UP         = 0x0080,   /* DFS master */
+    HTT_STATS_CHANNEL_DFS_CFREQ2         = 0x0100,   /* Enable radar event reporting for sec80 in VHT80p80 */
+    HTT_STATS_CHANNEL_DTIM_SYNTH         = 0x0200,   /* Enable DTIM */
+    HTT_STATS_CHANNEL_FORCE_GAIN         = 0x0400,   /* Force gain mmode (only used for FTM) */
+    HTT_STATS_CHANNEL_PERFORM_NF_CAL     = 0x0800,   /* Perform NF cal in channel change (only used for FTM) */
+    HTT_STATS_CHANNEL_165_MODE_0         = 0x1000,   /* 165 MHz mode 0 */
+    HTT_STATS_CHANNEL_165_MODE_1         = 0x2000,   /* 165 MHz mode 1 */
+    HTT_STATS_CHANNEL_165_MODE_2         = 0x3000,   /* 165 MHz mode 2 */
+    HTT_STATS_CHANNEL_165_MODE_MASK      = 0x3000,   /* 165 MHz 2-bit mode mask */
+} HTT_STATS_CHANNEL_FLAGS;
+
+typedef enum {
+    HTT_STATS_RF_MODE_MIN          = 0,
+    HTT_STATS_RF_MODE_PHYA_ONLY    = 0,        // only PHYA is active
+    HTT_STATS_RF_MODE_DBS          = 1,        // PHYA/5G and PHYB/2G
+    HTT_STATS_RF_MODE_SBS          = 2,        // PHYA/5G and PHYB/5G in HL/NPR; PHYA0/5G and PHYA1/5G in HK
+    HTT_STATS_RF_MODE_PHYB_ONLY    = 3,        // only PHYB is active
+    HTT_STATS_RF_MODE_DBS_SBS      = 4,        // PHYA0/5G, PHYA1/5G and PHYB/2G in HK (the 2 5G are in different channel)
+    HTT_STATS_RF_MODE_DBS_OR_SBS   = 5,        // PHYA0/5G, PHYA1/5G and PHYB/5G or 2G in HK
+    HTT_STATS_RF_MODE_INVALID      = 0xff,
+} HTT_STATS_RF_MODE;
+
+typedef enum {
+    HTT_STATS_RESET_CAUSE_FIRST_RESET      = 0x00000001, /* First reset by application */
+    HTT_STATS_RESET_CAUSE_ERROR            = 0x00000002, /* Trigered due to error */
+    HTT_STATS_RESET_CAUSE_DEEP_SLEEP       = 0x00000004, /* Reset after deep sleep */
+    HTT_STATS_RESET_CAUSE_FULL_RESET       = 0x00000008, /* Full reset without any optimizations */
+    HTT_STATS_RESET_CAUSE_CHANNEL_CHANGE   = 0x00000010, /* For normal channel change */
+    HTT_STATS_RESET_CAUSE_BAND_CHANGE      = 0x00000020, /* Trigered due to band change */
+    HTT_STATS_RESET_CAUSE_DO_CAL           = 0x00000040, /* Trigered due to calibrations */
+    HTT_STATS_RESET_CAUSE_MCI_ERROR        = 0x00000080, /* Triggered due to MCI ERROR */
+    HTT_STATS_RESET_CAUSE_CHWIDTH_CHANGE   = 0x00000100, /* Trigered due to channel width change */
+    HTT_STATS_RESET_CAUSE_WARM_RESTORE_CAL = 0x00000200, /* Trigered due to warm reset we want to just restore calibrations */
+    HTT_STATS_RESET_CAUSE_COLD_RESTORE_CAL = 0x00000400, /* Trigered due to cold reset we want to just restore calibrations */
+    HTT_STATS_RESET_CAUSE_PHY_WARM_RESET   = 0x00000800, /* Trigered due to phy warm reset we want to just restore calibrations */
+    HTT_STATS_RESET_CAUSE_M3_SSR           = 0x00001000, /* Trigered due to SSR Restart */
+    HTT_STATS_RESET_CAUSE_FORCE_CAL        = 0x00002000, /* Reset to force the calibration */
+    /* 0x00004000, 0x00008000 reserved */
+    HTT_STATS_NO_RESET_CHANNEL_CHANGE      = 0x00010000, /* No reset, normal channel change */
+    HTT_STATS_NO_RESET_BAND_CHANGE         = 0x00020000, /* No reset, channel change across band */
+    HTT_STATS_NO_RESET_CHWIDTH_CHANGE      = 0x00040000, /* No reset, channel change across channel width */
+    HTT_STATS_NO_RESET_CHAINMASK_CHANGE    = 0x00080000, /* No reset, chainmask change */
+    HTT_STATS_RESET_CAUSE_PHY_WARM_RESET_UCODE_TRIG = 0x00100000, /* Trigered due to phy warm reset we want to just restore calibrations */
+    HTT_STATS_RESET_CAUSE_PHY_OFF_TIMEOUT_RESET  = 0x00200000, /* Reset ucode because phy off ack timeout*/
+    HTT_STATS_RESET_CAUSE_LMAC_RESET_UMAC_NOC_ERR = 0x00400000, /* LMAC reset trigered due to NOC Address/Slave error originating at LMAC */
+    HTT_STATS_NO_RESET_SCAN_BACK_TO_SAME_HOME_CHANNEL_CHANGE = 0x00800000, /* No reset, scan to home channel change */
+} HTT_STATS_RESET_CAUSE;
+
+
+typedef struct {
+    htt_tlv_hdr_t tlv_hdr;
+    /* number of RXTD OFDMA OTA error counts except power surge and drop */
+    A_UINT32 rx_ofdma_timing_err_cnt;
+    /* rx_cck_fail_cnt:
+     * number of cck error counts due to rx reception failure because of
+     * timing error in cck
+     */
+    A_UINT32 rx_cck_fail_cnt;
+    /* number of times tx abort initiated by mac */
+    A_UINT32 mactx_abort_cnt;
+    /* number of times rx abort initiated by mac */
+    A_UINT32 macrx_abort_cnt;
+    /* number of times tx abort initiated by phy */
+    A_UINT32 phytx_abort_cnt;
+    /* number of times rx abort initiated by phy */
+    A_UINT32 phyrx_abort_cnt;
+    /* number of rx defered count initiated by phy */
+    A_UINT32 phyrx_defer_abort_cnt;
+    /* number of sizing events generated at LSTF */
+    A_UINT32 rx_gain_adj_lstf_event_cnt; /* a.k.a sizing1 */
+    /* number of sizing events generated at non-legacy LTF */
+    A_UINT32 rx_gain_adj_non_legacy_cnt; /* a.k.a sizing2 */
+    /* rx_pkt_cnt -
+     * Received EOP (end-of-packet) count per packet type;
+     * [0] = 11a; [1] = 11b; [2] = 11n; [3] = 11ac; [4] = 11ax; [5] = GF
+     * [6-7]=RSVD
+     */
+    A_UINT32 rx_pkt_cnt[HTT_MAX_RX_PKT_CNT];
+    /* rx_pkt_crc_pass_cnt -
+     * Received EOP (end-of-packet) count per packet type;
+     * [0] = 11a; [1] = 11b; [2] = 11n; [3] = 11ac; [4] = 11ax; [5] = GF
+     * [6-7]=RSVD
+     */
+    A_UINT32 rx_pkt_crc_pass_cnt[HTT_MAX_RX_PKT_CRC_PASS_CNT];
+    /* per_blk_err_cnt -
+     * Error count per error source;
+     * [0] = unknown; [1] = LSIG; [2] = HTSIG; [3] = VHTSIG; [4] = HESIG;
+     * [5] = RXTD_OTA; [6] = RXTD_FATAL; [7] = DEMF; [8] = ROBE;
+     * [9] = PMI; [10] = TXFD; [11] = TXTD; [12] = PHYRF
+     * [13-19]=RSVD
+     */
+    A_UINT32 per_blk_err_cnt[HTT_MAX_PER_BLK_ERR_CNT];
+    /* rx_ota_err_cnt -
+     * RXTD OTA (over-the-air) error count per error reason;
+     * [0] = voting fail; [1] = weak det fail; [2] = strong sig fail;
+     * [3] = cck fail; [4] = power surge; [5] = power drop;
+     * [6] = btcf timing timeout error; [7] = btcf packet detect error;
+     * [8] = coarse timing timeout error
+     * [9-13]=RSVD
+     */
+    A_UINT32 rx_ota_err_cnt[HTT_MAX_RX_OTA_ERR_CNT];
+} htt_phy_counters_tlv;
+
+typedef struct {
+    htt_tlv_hdr_t tlv_hdr;
+    /* per chain hw noise floor values in dBm */
+    A_INT32  nf_chain[HTT_STATS_MAX_CHAINS];
+    /* number of false radars detected */
+    A_UINT32 false_radar_cnt;
+    /* number of channel switches happened due to radar detection */
+    A_UINT32 radar_cs_cnt;
+    /* ani_level -
+     * ANI level (noise interference) corresponds to the channel
+     * the desense levels range from -5 to 15 in dB units,
+     * higher values indicating more noise interference.
+     */
+    A_INT32 ani_level;
+    /* running time in minutes since FW boot */
+    A_UINT32 fw_run_time;
+    /* per chain runtime noise floor values in dBm */
+    A_INT32 runTime_nf_chain[HTT_STATS_MAX_CHAINS];
+} htt_phy_stats_tlv;
+
+typedef struct {
+    htt_tlv_hdr_t tlv_hdr;
+    /* current pdev_id */
+    A_UINT32 pdev_id;
+    /* current channel information */
+    A_UINT32 chan_mhz;
+    /* center_freq1, center_freq2 in mhz */
+    A_UINT32 chan_band_center_freq1;
+    A_UINT32 chan_band_center_freq2;
+    /* chan_phy_mode - WLAN_PHY_MODE enum type */
+    A_UINT32 chan_phy_mode;
+    /* chan_flags follows HTT_STATS_CHANNEL_FLAGS enum */
+    A_UINT32  chan_flags;
+    /* channel Num updated to virtual phybase */
+    A_UINT32 chan_num;
+
+    /* Cause for the phy reset - HTT_STATS_RESET_CAUSE */
+    A_UINT32 reset_cause;
+    /* Cause for the previous phy reset */
+    A_UINT32 prev_reset_cause;
+    /* source for the phywarm reset - HTT_STATS_RESET_CAUSE */
+    A_UINT32 phy_warm_reset_src;
+    /* rxGain Table selection mode - register settings
+     * 0 - Auto, 1/2 - Forced with and without BT override respectively
+     */
+    A_UINT32 rx_gain_tbl_mode;
+    /* current xbar value - perchain analog to digital idx mapping */
+    A_UINT32 xbar_val;
+    /* Flag to indicate forced calibration */
+    A_UINT32 force_calibration;
+    /* current RF mode (e.g. SBS/DBS) - follows HTT_STATS_RF_MODE enum */
+    A_UINT32 phyrf_mode;
+
+    /* PDL phyInput stats */
+    /* homechannel flag
+     * 1- Homechan, 0 - scan channel
+     */
+    A_UINT32 phy_homechan;
+    /* Tx and Rx chainmask */
+    A_UINT32 phy_tx_ch_mask;
+    A_UINT32 phy_rx_ch_mask;
+    /* INI masks - to decide the INI registers to be loaded on a reset */
+    A_UINT32 phybb_ini_mask;
+    A_UINT32 phyrf_ini_mask;
+
+    /* DFS,ADFS/Spectral scan enable masks */
+    A_UINT32 phy_dfs_en_mask;
+    A_UINT32 phy_sscan_en_mask;
+    A_UINT32 phy_synth_sel_mask;
+    A_UINT32 phy_adfs_freq;
+
+    /* CCK FIR settings
+     * register settings - filter coefficients for Iqs conversion
+     * [31:24] = FIR_COEFF_3_0
+     * [23:16] = FIR_COEFF_2_0
+     * [15:8]  = FIR_COEFF_1_0
+     * [7:0]   = FIR_COEFF_0_0
+     */
+    A_UINT32 cck_fir_settings;
+    /* dynamic primary channel index
+     * primary 20MHz channel index on the current channel BW
+     */
+    A_UINT32  phy_dyn_pri_chan;
+
+    /* Current CCA detection threshold
+     * dB above noisefloor req for CCA
+     * Register settings for all subbands
+     */
+    A_UINT32 cca_thresh;
+    /* status for dynamic CCA adjustment
+     * 0-disabled, 1-enabled
+     */
+    A_UINT32 dyn_cca_status;
+} htt_phy_reset_stats_tlv;
+
+typedef struct {
+    htt_tlv_hdr_t tlv_hdr;
+
+    /* current pdev_id */
+    A_UINT32 pdev_id;
+    /* ucode PHYOFF pass/failure count */
+    A_UINT32 cf_active_low_fail_cnt;
+    A_UINT32 cf_active_low_pass_cnt;
+
+    /* PHYOFF count attempted through ucode VREG */
+    A_UINT32 phy_off_through_vreg_cnt;
+
+    /* Force calibration count */
+    A_UINT32 force_calibration_cnt;
+
+    /* phyoff count during rfmode switch */
+    A_UINT32 rf_mode_switch_phy_off_cnt;
+} htt_phy_reset_counters_tlv;
+
+/* NOTE:
+ * This structure is for documentation, and cannot be safely used directly.
+ * Instead, use the constituent TLV structures to fill/parse.
+ */
+typedef struct {
+    htt_phy_counters_tlv phy_counters;
+    htt_phy_stats_tlv phy_stats;
+    htt_phy_reset_counters_tlv phy_reset_counters;
+    htt_phy_reset_stats_tlv phy_reset_stats;
+} htt_phy_counters_and_phy_stats_t;
+>>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
 
 #endif /* __HTT_STATS_H__ */
