@@ -767,7 +767,11 @@ static int sugov_init(struct cpufreq_policy *policy)
                 }
 	}
 
+<<<<<<< HEAD
 	tunables->iowait_boost_enable = policy->iowait_boost_enable;
+=======
+	tunables->iowait_boost_enable = false;
+>>>>>>> bb7eb30c65a6... schedutil: disable io boost by default
 
 	policy->governor_data = sg_policy;
 	sg_policy->tunables = tunables;
