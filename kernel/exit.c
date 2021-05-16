@@ -715,7 +715,7 @@ void do_exit(long code)
 	}
 
 	exit_signals(tsk);  /* sets PF_EXITING */
-<<<<<<< HEAD
+
 
 	schedtune_exit_task(tsk);
 
@@ -729,8 +729,8 @@ void do_exit(long code)
 	 */
 	smp_mb();
 	raw_spin_unlock_wait(&tsk->pi_lock);
-=======
->>>>>>> c800e464eff3bef1660a92978103095a4bda5d3d
+
+
 
 	if (unlikely(in_atomic())) {
 		pr_info("note: %s[%d] exited with preempt_count %d\n",

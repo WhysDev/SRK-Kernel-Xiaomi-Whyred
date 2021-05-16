@@ -3038,14 +3038,14 @@ static void binder_transaction(struct binder_proc *proc,
 			return_error_line = __LINE__;
 			goto err_dead_binder;
 		}
-<<<<<<< HEAD
+
 		e->to_node = target_node->debug_id;
-=======
+
 		if (WARN_ON(proc == target_proc)) {
 			return_error = BR_FAILED_REPLY;
 			goto err_invalid_target_handle;
 		}
->>>>>>> c800e464eff3bef1660a92978103095a4bda5d3d
+
 		if (security_binder_transaction(proc->tsk,
 						target_proc->tsk) < 0) {
 			return_error = BR_FAILED_REPLY;
@@ -3615,7 +3615,7 @@ static int binder_thread_write(struct binder_proc *proc,
 				binder_user_error("%d:%d refcount change on invalid ref %d\n",
 					proc->pid, thread->pid, target);
 				break;
->>>>>>> c800e464eff3bef1660a92978103095a4bda5d3d
+
 			}
 			switch (cmd) {
 			case BC_INCREFS:

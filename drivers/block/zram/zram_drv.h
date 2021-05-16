@@ -21,9 +21,9 @@
 
 #include "zcomp.h"
 
-<<<<<<< HEAD
+
 #define SECTOR_SHIFT		9
-=======
+
 /*-- Configurable parameters */
 
 /*
