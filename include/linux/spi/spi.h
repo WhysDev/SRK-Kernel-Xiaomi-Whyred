@@ -577,6 +577,7 @@ extern void spi_finalize_current_message(struct spi_master *master);
 extern void spi_finalize_current_transfer(struct spi_master *master);
 
 /* the spi driver core manages memory for the spi_master classdev */
+<<<<<<< HEAD
 extern struct spi_master *__spi_alloc_controller(struct device *host,
 						 unsigned int size, bool slave);
 
@@ -594,6 +595,12 @@ static inline struct spi_master *spi_alloc_slave(struct device *host,
 
 	return __spi_alloc_controller(host, size, true);
 }
+=======
+extern struct spi_master *
+spi_alloc_master(struct device *host, unsigned size);
+extern struct spi_master *
+devm_spi_alloc_master(struct device *dev, unsigned int size);
+>>>>>>> c800e464eff3bef1660a92978103095a4bda5d3d
 
 extern int spi_register_master(struct spi_master *master);
 extern int devm_spi_register_master(struct device *dev,

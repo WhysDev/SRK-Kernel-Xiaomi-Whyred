@@ -289,14 +289,30 @@ static void put_pages(struct drm_gem_object *obj)
 	struct msm_gem_object *msm_obj = to_msm_bo(obj);
 
 	if (msm_obj->pages) {
+<<<<<<< HEAD
 		if (msm_obj->flags & MSM_BO_LOCKED) {
 			unprotect_pages(msm_obj);
 			msm_obj->flags &= ~MSM_BO_LOCKED;
 		}
+=======
+		if (msm_obj->sgt) {
+			/* For non-cached buffers, ensure the new
+			 * pages are clean because display controller,
+			 * GPU, etc. are not coherent:
+			 */
+			if (msm_obj->flags & (MSM_BO_WC|MSM_BO_UNCACHED))
+				dma_unmap_sg(obj->dev->dev, msm_obj->sgt->sgl,
+					     msm_obj->sgt->nents,
+					     DMA_BIDIRECTIONAL);
+>>>>>>> c800e464eff3bef1660a92978103095a4bda5d3d
 
-		if (msm_obj->sgt)
 			sg_free_table(msm_obj->sgt);
+<<<<<<< HEAD
 		kfree(msm_obj->sgt);
+=======
+			kfree(msm_obj->sgt);
+		}
+>>>>>>> c800e464eff3bef1660a92978103095a4bda5d3d
 
 		if (use_pages(obj)) {
 			if (msm_obj->flags & MSM_BO_SVM) {
