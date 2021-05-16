@@ -2328,11 +2328,11 @@ static unsigned long __zs_compact(struct zs_pool *pool,
 			free_zspage(pool, class, src_zspage);
 			pool->stats.pages_compacted += class->pages_per_zspage;
 		}
-=======
+
 		putback_zspage(pool, class, dst_page);
 		if (putback_zspage(pool, class, src_page) == ZS_EMPTY)
 			pages_freed += class->pages_per_zspage;
->>>>>>> c800e464eff3bef1660a92978103095a4bda5d3d
+
 		spin_unlock(&class->lock);
 		cond_resched();
 		spin_lock(&class->lock);
