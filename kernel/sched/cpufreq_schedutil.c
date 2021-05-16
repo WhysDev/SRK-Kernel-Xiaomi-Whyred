@@ -671,8 +671,8 @@ static void sugov_tunables_free(struct sugov_tunables *tunables)
 	kfree(tunables);
 }
 
-<<<<<<< HEAD
-=======
+
+
 static void sugov_tunables_restore(struct cpufreq_policy *policy)
 {
 	struct sugov_policy *sg_policy = policy->governor_data;
@@ -709,7 +709,7 @@ static int fb_notifier_cb(struct notifier_block *nb, unsigned long action,
 	return NOTIFY_OK;
 }
 
->>>>>>> 4fcf4b370503... schedutil: Import fb callbacks to disable iowait boost on screen off
+
 static int sugov_init(struct cpufreq_policy *policy)
 {
 	struct sugov_policy *sg_policy;
@@ -767,11 +767,11 @@ static int sugov_init(struct cpufreq_policy *policy)
                 }
 	}
 
-<<<<<<< HEAD
+
 	tunables->iowait_boost_enable = policy->iowait_boost_enable;
-=======
+
 	tunables->iowait_boost_enable = false;
->>>>>>> bb7eb30c65a6... schedutil: disable io boost by default
+
 
 	policy->governor_data = sg_policy;
 	sg_policy->tunables = tunables;

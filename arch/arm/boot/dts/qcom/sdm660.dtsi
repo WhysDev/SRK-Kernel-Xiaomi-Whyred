@@ -34,11 +34,11 @@
 
 	chosen {
 		stdout-path = "serial0";
-<<<<<<< HEAD
+
 		bootargs = "quiet rcupdate.rcu_expedited=1 noirqdebug";
-=======
+
 		bootargs = "rcu_nocbs=0-3 quiet noirqdebug";
->>>>>>> 03750bde5e81... dts: remove rcu_expedited boot argument
+
 	};
 
 	psci {
