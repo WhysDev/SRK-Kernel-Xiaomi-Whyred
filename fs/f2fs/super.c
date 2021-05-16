@@ -1507,7 +1507,7 @@ restore_flag:
 
 static void f2fs_enable_checkpoint(struct f2fs_sb_info *sbi)
 {
-<<<<<<< HEAD
+
 
 	mutex_lock(&sbi->gc_mutex);
 
@@ -1516,9 +1516,9 @@ static void f2fs_enable_checkpoint(struct f2fs_sb_info *sbi)
 
 	down_write(&sbi->gc_lock);
 
-=======
+
 	mutex_lock(&sbi->gc_mutex);
->>>>>>> parent of 96599cee0fb2... f2fs: flush data when enabling checkpoint back
+
 	f2fs_dirty_to_prefree(sbi);
 
 	clear_sbi_flag(sbi, SBI_CP_DISABLED);
