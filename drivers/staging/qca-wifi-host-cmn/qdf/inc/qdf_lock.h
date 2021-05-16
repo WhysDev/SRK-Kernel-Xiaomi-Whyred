@@ -1,9 +1,9 @@
 /*
-<<<<<<< HEAD
+
  * Copyright (c) 2014-2017 The Linux Foundation. All rights reserved.
-=======
+
  * Copyright (c) 2014-2021 The Linux Foundation. All rights reserved.
->>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
+
  *
  * Permission to use, copy, modify, and/or distribute this software for
  * any purpose with or without fee is hereby granted, provided that the

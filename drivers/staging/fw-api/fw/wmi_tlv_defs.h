@@ -1012,8 +1012,8 @@ typedef enum {
     WMITLV_TAG_STRUC_wmi_cfr_filter_group_config,
     WMITLV_TAG_STRUC_wmi_fd_tmpl_cmd_fixed_param,
     WMITLV_TAG_STRUC_wmi_vdev_bss_max_idle_time_cmd_fixed_param,
-<<<<<<< HEAD
-=======
+
+
     WMITLV_TAG_STRUC_wmi_atf_ssid_grp_request_fixed_param,
     WMITLV_TAG_STRUC_wmi_atf_group_info,
     WMITLV_TAG_STRUC_wmi_atf_grp_wmm_ac_cfg_request_fixed_param,
@@ -1142,7 +1142,7 @@ typedef enum {
     WMITLV_TAG_STRUC_wmi_pdev_get_dpd_status_evt_fixed_param,
     WMITLV_TAG_STRUC_wmi_eht_rate_set,
     WMITLV_TAG_STRUC_wmi_dcs_awgn_int_t,
->>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
+
 } WMITLV_TAG_ID;
 
 /*
@@ -2262,13 +2262,13 @@ WMITLV_CREATE_PARAM_STRUC(WMI_VDEV_IPSEC_NATKEEPALIVE_FILTER_CMDID);
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_BYTE, A_UINT8, peer_legacy_rates, WMITLV_SIZE_VAR) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_BYTE, A_UINT8, peer_ht_rates, WMITLV_SIZE_VAR) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_STRUC_wmi_vht_rate_set, wmi_vht_rate_set, peer_vht_rates, WMITLV_SIZE_FIX) \
-<<<<<<< HEAD
+
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_he_rate_set, peer_he_rates, WMITLV_SIZE_VAR)
-=======
+
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_he_rate_set, peer_he_rates, WMITLV_SIZE_VAR) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_peer_assoc_mlo_params, mlo_params, WMITLV_SIZE_VAR) \
     WMITLV_ELEM(id,op,buf,len, WMITLV_TAG_ARRAY_STRUC, wmi_eht_rate_set, peer_eht_rates, WMITLV_SIZE_VAR)
->>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
+
 
 WMITLV_CREATE_PARAM_STRUC(WMI_PEER_ASSOC_CMDID);
 

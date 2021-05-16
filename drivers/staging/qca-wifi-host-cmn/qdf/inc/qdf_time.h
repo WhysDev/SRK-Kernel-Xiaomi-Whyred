@@ -184,8 +184,8 @@ enum qdf_timestamp_unit {
 #ifdef QCA_WIFI_3_0_ADRASTEA
 #define QDF_LOG_TIMESTAMP_UNIT QTIMER
 #define QDF_LOG_TIMESTAMP_CYCLES_PER_10_US 192
-<<<<<<< HEAD
-=======
+
+
 
 static inline uint64_t qdf_log_timestamp_to_usecs(uint64_t time)
 {
@@ -218,15 +218,15 @@ static inline uint64_t qdf_get_log_timestamp_lightweight(void)
 {
 	return __qdf_get_log_timestamp();
 }
->>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
+
 #else
 #define QDF_LOG_TIMESTAMP_UNIT KERNEL_LOG
 #define QDF_LOG_TIMESTAMP_CYCLES_PER_10_US 10
 #endif
 
-<<<<<<< HEAD
+
 static inline unsigned long long qdf_log_timestamp_to_usecs(uint64_t time)
-=======
+
 static inline uint64_t qdf_log_timestamp_to_usecs(uint64_t time)
 {
 	/* timestamps are already in micro seconds */
@@ -252,7 +252,7 @@ static inline uint64_t qdf_get_log_timestamp_lightweight(void)
 
 static inline void qdf_log_timestamp_to_secs(uint64_t time, uint64_t *secs,
 					     uint64_t *usecs)
->>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
+
 {
 	if ((time * 10) < time) {
 		time = qdf_do_div(time, QDF_LOG_TIMESTAMP_CYCLES_PER_10_US);

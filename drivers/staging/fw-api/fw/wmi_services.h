@@ -419,9 +419,9 @@ typedef  enum  {
 
     /******* ADD NEW SERVICES HERE *******/
 
-<<<<<<< HEAD
+
     WMI_MAX_EXT_SERVICE
-=======
+
     WMI_MAX_EXT_SERVICE = 256,
 
     /* NOTE:
@@ -501,7 +501,7 @@ typedef  enum  {
 
 
     WMI_MAX_EXT2_SERVICE
->>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
+
 
 } WMI_SERVICE;
 

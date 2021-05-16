@@ -30,20 +30,20 @@
    ===========================================================================*/
 
 #define QWLAN_VERSION_MAJOR            5
-<<<<<<< HEAD
+
 #define QWLAN_VERSION_MINOR            1
 #define QWLAN_VERSION_PATCH            1
 #define QWLAN_VERSION_EXTRA            "R"
 #define QWLAN_VERSION_BUILD            76
 
 #define QWLAN_VERSIONSTR               "5.1.1.76R"
-=======
+
 #define QWLAN_VERSION_MINOR            2
 #define QWLAN_VERSION_PATCH            022
 #define QWLAN_VERSION_EXTRA            "B"
 #define QWLAN_VERSION_BUILD            7
 
 #define QWLAN_VERSIONSTR               "5.2.022.7B"
->>>>>>> 0255b5b16312... qcacld-3.0: Merge CAF LA.UM.9.2.r1-03000 (A11 tag)
+
 
 #endif /* QWLAN_VERSION_H */
