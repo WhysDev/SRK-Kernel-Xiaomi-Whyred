@@ -40,7 +40,7 @@ static const size_t max_zpage_size = PAGE_SIZE / 4 * 3;
 
 /*-- End of configurable params */
 
->>>>>>> c800e464eff3bef1660a92978103095a4bda5d3d
+
 #define SECTORS_PER_PAGE_SHIFT	(PAGE_SHIFT - SECTOR_SHIFT)
 #define SECTORS_PER_PAGE	(1 << SECTORS_PER_PAGE_SHIFT)
 #define ZRAM_LOGICAL_BLOCK_SHIFT 12

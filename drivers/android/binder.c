@@ -3572,7 +3572,7 @@ static int binder_thread_write(struct binder_proc *proc,
 				return -EFAULT;
 
 			ptr += sizeof(uint32_t);
-<<<<<<< HEAD
+
 			ret = -1;
 			if (increment && !target) {
 				struct binder_node *ctx_mgr_node;
@@ -3592,7 +3592,7 @@ static int binder_thread_write(struct binder_proc *proc,
 				binder_user_error("%d:%d tried to acquire reference to desc %d, got %d instead\n",
 					proc->pid, thread->pid,
 					target, rdata.desc);
-=======
+
 			if (target == 0 && binder_context_mgr_node &&
 			    (cmd == BC_INCREFS || cmd == BC_ACQUIRE)) {
 				if (binder_context_mgr_node->proc == proc) {
